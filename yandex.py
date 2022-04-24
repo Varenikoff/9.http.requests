@@ -3,7 +3,7 @@ import pathlib
 
 
 class YaUploader:
-    token = 'AQAAAAAIjgC2AADLWzZT1uYZXEBZmC8h26pWg5I'
+    token = ''
 
     def __init__(self, file_path):
         self.file_path = file_path
@@ -22,7 +22,7 @@ class YaUploader:
         res = requests.put(upload_link, data=open(self.file_path, 'rb'))
         res.raise_for_status()
         if res.status_code == 201:
-            return 'Файл успешно загружен'
+            return 'Файл загружен'
         return 'Ошибка загрузки файла'
 
 
